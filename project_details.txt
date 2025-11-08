@@ -1,0 +1,25 @@
+Client : Vijaya Lakshmi
+
+###############################################
+Datasets we use : 
+
+Kaggle - https://huggingface.co/datasets/Pradeep016/career-guidance-qa-dataset/viewer/default/train?p=2  questions and answers for each role
+
+career recommendation : https://www.kaggle.com/datasets/shanimmahir/studies-career-recommendation-dataset
+
+job skills dataset :  https://www.kaggle.com/datasets/asaniczka/1-3m-linkedin-jobs-and-skills-2024
+
+candidate job role dataset : https://www.kaggle.com/datasets/ckshetty/candidate-job-role-dataset
+
+##############################################
+The career recommender you built with SentenceTransformer + cosine similarity is not a supervised model — it’s a semantic similarity system.
+
+##############################################
+['Lawyer' 'Doctor' 'Government Officer' 'Artist' 'Social Network Studies'
+ 'Software Engineer' 'Teacher' 'Business Owner' 'Scientist' 'Banker'
+ 'Writer' 'Accountant' 'Designer' 'Construction Engineer' 'Game Developer'
+ 'Stock Investor' 'Real Estate Developer']
+
+##############################################
+
+

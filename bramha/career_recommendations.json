@@ -1,0 +1,104 @@
+[
+  {
+    "career_opportunity": "Lawyer",
+    "description": "represent clients in legal proceedings, draft contracts, and provide legal advice on various issues...",
+    "pay_scale": "High paying",
+    "skill_required": ["legal research", "court procedures", "negotiation", "client handling", "legal writing"]
+  },
+  {
+    "career_opportunity": "Doctor",
+    "description": "diagnose illnesses, prescribe treatments, and promote overall health and wellness in patients...",
+    "pay_scale": "High paying",
+    "skill_required": ["anatomy", "clinical diagnosis", "patient care", "pharmacology", "medical ethics"]
+  },
+  {
+    "career_opportunity": "Government Officer",
+    "description": "formulate and implement public policies, oversee administrative operations, and ensure law and order...",
+    "pay_scale": "Medium to High paying",
+    "skill_required": ["policy making", "public administration", "report drafting", "analytical reasoning", "governance"]
+  },
+  {
+    "career_opportunity": "Artist",
+    "description": "create original artworks, visual designs, or performances that express ideas and emotions...",
+    "pay_scale": "Medium paying",
+    "skill_required": ["color theory", "sketching", "digital illustration", "composition", "visual storytelling"]
+  },
+  {
+    "career_opportunity": "Social Network Studies",
+    "description": "analyze how people connect and interact on digital platforms to understand behavioral trends...",
+    "pay_scale": "Medium paying",
+    "skill_required": ["data analytics", "psychology", "social media strategy", "network modeling", "digital communication"]
+  },
+  {
+    "career_opportunity": "Software Engineer",
+    "description": "design, develop, and maintain scalable software systems and applications for diverse use cases...",
+    "pay_scale": "High paying",
+    "skill_required": ["algorithms", "data structures", "system design", "cloud computing", "debugging"]
+  },
+  {
+    "career_opportunity": "Teacher",
+    "description": "educate students, develop curriculum, and foster learning environments that encourage critical thinking...",
+    "pay_scale": "Medium paying",
+    "skill_required": ["curriculum planning", "student assessment", "communication", "subject expertise", "pedagogy"]
+  },
+  {
+    "career_opportunity": "Business Owner",
+    "description": "manage business operations, plan strategies, and oversee financial and marketing activities...",
+    "pay_scale": "High paying (variable)",
+    "skill_required": ["business management", "marketing", "finance", "risk analysis", "leadership"]
+  },
+  {
+    "career_opportunity": "Scientist",
+    "description": "conduct experiments, publish research findings, and contribute to advancements in scientific fields...",
+    "pay_scale": "High paying",
+    "skill_required": ["data analysis", "scientific writing", "laboratory skills", "research methodology", "critical thinking"]
+  },
+  {
+    "career_opportunity": "Banker",
+    "description": "manage financial transactions, advise clients on investments, and ensure regulatory compliance...",
+    "pay_scale": "High paying",
+    "skill_required": ["financial analysis", "accounting", "risk assessment", "customer relations", "banking software"]
+  },
+  {
+    "career_opportunity": "Writer",
+    "description": "create engaging content, stories, or documentation for media, publications, or digital platforms...",
+    "pay_scale": "Medium paying",
+    "skill_required": ["storytelling", "editing", "research", "content strategy", "grammar"]
+  },
+  {
+    "career_opportunity": "Accountant",
+    "description": "prepare financial reports, manage budgets, and ensure accurate tax and audit compliance...",
+    "pay_scale": "Medium to High paying",
+    "skill_required": ["financial reporting", "taxation", "excel", "auditing", "bookkeeping"]
+  },
+  {
+    "career_opportunity": "Designer",
+    "description": "create visually appealing designs for products, brands, or digital interfaces using creative tools...",
+    "pay_scale": "Medium paying",
+    "skill_required": ["ui/ux design", "creativity", "photoshop", "illustrator", "user research"]
+  },
+  {
+    "career_opportunity": "Construction Engineer",
+    "description": "plan, design, and supervise infrastructure and building projects ensuring safety and efficiency...",
+    "pay_scale": "High paying",
+    "skill_required": ["autocad", "project management", "civil design", "materials engineering", "safety regulations"]
+  },
+  {
+    "career_opportunity": "Game Developer",
+    "description": "develop interactive games using creative design and efficient programming techniques...",
+    "pay_scale": "High paying",
+    "skill_required": ["unity", "c++", "game physics", "3d modeling", "animation"]
+  },
+  {
+    "career_opportunity": "Stock Investor",
+    "description": "analyze market trends and make informed investment decisions to maximize returns...",
+    "pay_scale": "High paying (variable)",
+    "skill_required": ["financial analysis", "market research", "risk management", "portfolio strategy", "trading tools"]
+  },
+  {
+    "career_opportunity": "Real Estate Developer",
+    "description": "oversee the planning and construction of properties, and manage investments in real estate projects...",
+    "pay_scale": "High paying",
+    "skill_required": ["market analysis", "finance", "construction management", "negotiation", "urban planning"]
+  }
+]
