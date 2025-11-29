@@ -6,7 +6,7 @@ import os
 # Paths
 MODEL_PATH = "bramha/career_recommendation_xgb_model.pkl"
 ENCODER_PATH = "bramha/label_encoders.pkl"
-CAREER_JSON_PATH = "bramha\career_recommendations.json"  # <-- path to your JSON file
+CAREER_JSON_PATH = "bramha/career_recommendations.json"  # <-- path to your JSON file
 
 # Load model and encoders
 xgb_model = joblib.load(MODEL_PATH)
