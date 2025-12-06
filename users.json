@@ -17,6 +17,343 @@
     {
         "fullname": "sweety",
         "email": "sweety@gmail.com",
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+        "profile": {
+            "fullName": "Ganesh Bora",
+            "email": "sweety@gmail.com",
+            "gender": "male",
+            "age": "23",
+            "partTimeJob": "",
+            "absenceDays": "",
+            "extracurricularActivities": "",
+            "weeklyStudyHours": "",
+            "mathScore": "",
+            "historyScore": "",
+            "physicsScore": "",
+            "chemistryScore": "",
+            "biologyScore": "",
+            "englishScore": "",
+            "geographyScore": "",
+            "skills": "mysql , python , react , node , devops , cloud ",
+            "interests": "web development , devops"
+        },
+        "recommendations": [
+            {
+                "career_opportunity": "senior devops engineer",
+                "pay_scale": "High paying",
+                "description": "design and implement cicd pipelines and infrastructure automation...",
+                "matched_skills": [
+                    "devops"
+                ],
+                "skill_gap": [
+                    "cloud platforms",
+                    "kubernetes",
+                    "infrastructure",
+                    "code",
+                    "automation"
+                ],
+                "similarity": 0.45756030082702637
+            },
+            {
+                "career_opportunity": "devops engineer",
+                "pay_scale": "High paying",
+                "description": "implement cicd pipelines and manage cloud infrastructure...",
+                "matched_skills": [],
+                "skill_gap": [
+                    "technical troubleshooting",
+                    "solving systems",
+                    "continuous learning",
+                    "problem",
+                    "thinking"
+                ],
+                "similarity": 0.4122219383716583
+            },
+            {
+                "career_opportunity": "data engineering manager",
+                "pay_scale": "High paying",
+                "description": "lead teams building data infrastructure and pipelines...",
+                "matched_skills": [],
+                "skill_gap": [
+                    "cloud platforms",
+                    "team leadership",
+                    "data",
+                    "architecture",
+                    "big"
+                ],
+                "similarity": 0.3958039879798889
+            },
+            {
+                "career_opportunity": "blockchain developer",
+                "pay_scale": "High paying",
+                "description": "develop decentralized applications and smart contracts...",
+                "matched_skills": [],
+                "skill_gap": [
+                    "solidity",
+                    "web3",
+                    "cryptography",
+                    "distributed",
+                    "systems"
+                ],
+                "similarity": 0.39441344141960144
+            },
+            {
+                "career_opportunity": "cloud solutions architect",
+                "pay_scale": "High paying",
+                "description": "design scalable cloud infrastructure and migration strategies...",
+                "matched_skills": [
+                    "devops"
+                ],
+                "skill_gap": [
+                    "system design",
+                    "awsazure",
+                    "microservices",
+                    "cost",
+                    "optimization"
+                ],
+                "similarity": 0.39086779952049255
+            }
+        ]
+    },
+    {
+        "fullname": "karunakar",
+        "email": "karunakar@gmail.com",
         "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
+    },
+    {
+        "fullname": "karuna",
+        "email": "karuna@gmail.com",
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+        "profile": {
+            "email": "karuna@gmail.com",
+            "gender": "male",
+            "age": "12",
+            "partTimeJob": "1",
+            "absenceDays": "3",
+            "extracurricularActivities": "1",
+            "weeklyStudyHours": "30",
+            "mathScore": "99",
+            "historyScore": "98",
+            "physicsScore": "89",
+            "chemistryScore": "98",
+            "biologyScore": "89",
+            "englishScore": "89",
+            "geographyScore": "78",
+            "skills": "",
+            "interests": ""
+        },
+        "recommendations": {
+            "recommended_career": "Doctor",
+            "description": "diagnose illnesses, prescribe treatments, and promote overall health and wellness in patients...",
+            "pay_scale": "High paying",
+            "skills_required": [
+                "anatomy",
+                "clinical diagnosis",
+                "patient care",
+                "pharmacology",
+                "medical ethics"
+            ]
+        }
+    },
+    {
+        "fullname": "ganesh",
+        "email": "ganesh1@gmail.com",
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+        "profile": {
+            "email": "ganesh1@gmail.com",
+            "gender": "male",
+            "age": "23",
+            "partTimeJob": "",
+            "absenceDays": "",
+            "extracurricularActivities": "",
+            "weeklyStudyHours": "",
+            "mathScore": "",
+            "historyScore": "",
+            "physicsScore": "",
+            "chemistryScore": "",
+            "biologyScore": "",
+            "englishScore": "",
+            "geographyScore": "",
+            "skills": "machine learning , deep learning",
+            "interests": "aiml , machine learning"
+        },
+        "recommendations": [
+            {
+                "career_opportunity": "machine learning engineer",
+                "pay_scale": "High paying",
+                "description": "design and implement ml algorithms for production systems...",
+                "matched_skills": [],
+                "skill_gap": [
+                    "cloud platforms",
+                    "python",
+                    "tensorflow",
+                    "statistics",
+                    "data"
+                ],
+                "similarity": 0.5057207942008972
+            },
+            {
+                "career_opportunity": "ai research scientist",
+                "pay_scale": "High paying",
+                "description": "conduct advanced research in artificial intelligence and machine learning...",
+                "matched_skills": [
+                    "deep",
+                    "learning"
+                ],
+                "skill_gap": [
+                    "statistical analysis",
+                    "research",
+                    "methodology",
+                    "python",
+                    "publications"
+                ],
+                "similarity": 0.4749367833137512
+            },
+            {
+                "career_opportunity": "artificial intelligence trainer",
+                "pay_scale": "High paying",
+                "description": "develop and train machine learning models...",
+                "matched_skills": [
+                    "machine learning"
+                ],
+                "skill_gap": [
+                    "programming data",
+                    "problem solving",
+                    "science",
+                    "algorithm",
+                    "development"
+                ],
+                "similarity": 0.438740611076355
+            },
+            {
+                "career_opportunity": "ai model validator",
+                "pay_scale": "High paying",
+                "description": "test and verify machine learning models for accuracy...",
+                "matched_skills": [
+                    "machine learning"
+                ],
+                "skill_gap": [
+                    "data analysis",
+                    "testing",
+                    "documentation",
+                    "python"
+                ],
+                "similarity": 0.3895328640937805
+            },
+            {
+                "career_opportunity": "head of data science",
+                "pay_scale": "High paying",
+                "description": "lead data science organization and ai initiatives...",
+                "matched_skills": [
+                    "machine learning"
+                ],
+                "skill_gap": [
+                    "strategy team",
+                    "data",
+                    "science",
+                    "leadership",
+                    "building"
+                ],
+                "similarity": 0.36150532960891724
+            }
+        ]
+    },
+    {
+        "fullname": "ganesh",
+        "email": "ganesh2@gmail.com",
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+        "profile": {
+            "email": "ganesh2@gmail.com",
+            "gender": "male",
+            "age": "24",
+            "partTimeJob": "",
+            "absenceDays": "",
+            "extracurricularActivities": "",
+            "weeklyStudyHours": "",
+            "mathScore": "",
+            "historyScore": "",
+            "physicsScore": "",
+            "chemistryScore": "",
+            "biologyScore": "",
+            "englishScore": "",
+            "geographyScore": "",
+            "skills": "mysql , python , react , node , devops , cloud ",
+            "interests": "web development , devops"
+        },
+        "recommendations": [
+            {
+                "career_opportunity": "senior devops engineer",
+                "pay_scale": "High paying",
+                "description": "design and implement cicd pipelines and infrastructure automation...",
+                "matched_skills": [
+                    "devops"
+                ],
+                "skill_gap": [
+                    "cloud platforms",
+                    "kubernetes",
+                    "infrastructure",
+                    "code",
+                    "automation"
+                ],
+                "similarity": 0.45756030082702637
+            },
+            {
+                "career_opportunity": "devops engineer",
+                "pay_scale": "High paying",
+                "description": "implement cicd pipelines and manage cloud infrastructure...",
+                "matched_skills": [],
+                "skill_gap": [
+                    "technical troubleshooting",
+                    "solving systems thinking",
+                    "continuous learning",
+                    "problem",
+                    "automation"
+                ],
+                "similarity": 0.4122219383716583
+            },
+            {
+                "career_opportunity": "data engineering manager",
+                "pay_scale": "High paying",
+                "description": "lead teams building data infrastructure and pipelines...",
+                "matched_skills": [],
+                "skill_gap": [
+                    "cloud platforms",
+                    "team leadership",
+                    "data",
+                    "architecture",
+                    "big"
+                ],
+                "similarity": 0.3958039879798889
+            },
+            {
+                "career_opportunity": "blockchain developer",
+                "pay_scale": "High paying",
+                "description": "develop decentralized applications and smart contracts...",
+                "matched_skills": [],
+                "skill_gap": [
+                    "solidity",
+                    "web3",
+                    "cryptography",
+                    "distributed",
+                    "systems"
+                ],
+                "similarity": 0.39441344141960144
+            },
+            {
+                "career_opportunity": "cloud solutions architect",
+                "pay_scale": "High paying",
+                "description": "design scalable cloud infrastructure and migration strategies...",
+                "matched_skills": [
+                    "devops"
+                ],
+                "skill_gap": [
+                    "system design",
+                    "awsazure",
+                    "microservices",
+                    "cost",
+                    "optimization"
+                ],
+                "similarity": 0.39086779952049255
+            }
+        ]
     }
 ]

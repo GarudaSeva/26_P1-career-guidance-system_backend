@@ -7,7 +7,7 @@ import os
 import hashlib
 
 app = Flask(__name__)
-CORS(app)  # enable CORS so React frontend can call Flask backend
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)  # enable CORS so React frontend can call Flask backend
 
 USERS_FILE = "users.json"
 
@@ -150,6 +150,107 @@ def recommend_endpoint():
     except Exception as e:
         print("❌ Error in /recommend:", e)
         return jsonify({"error": str(e)}), 500
+
+
+# ---------------- SAVE PROFILE + STORE RESULTS ----------------
+@app.route("/save-profile", methods=["POST"])
+def save_profile():
+    try:
+        data = request.get_json(force=True)
+        email = data.get("email")
+
+        if not email:
+            return jsonify({"error": "Email is required"}), 400
+
+        users = load_users()
+        user = next((u for u in users if u["email"].lower() == email.lower()), None)
+
+        if not user:
+            return jsonify({"error": "User not found"}), 404
+
+        age = int(data.get("age", 0))
+
+        # ================== BASIC STUDENT (<=17) ===================
+        if age <= 17:
+            gender = 1 if data.get("gender", "").lower() == "male" else 0
+            part_time_job = 1 if data.get("partTimeJob") == "1" else 0
+            extracurricular = 1 if data.get("extracurricularActivities") == "1" else 0
+
+            clean_data = {
+                "gender": gender,
+                "part_time_job": part_time_job,
+                "absence_days": int(data.get("absenceDays", 0)),
+                "extracurricular_activities": extracurricular,
+                "weekly_self_study_hours": int(data.get("weeklyStudyHours", 0)),
+                "math_score": int(data.get("mathScore", 0)),
+                "history_score": int(data.get("historyScore", 0)),
+                "physics_score": int(data.get("physicsScore", 0)),
+                "chemistry_score": int(data.get("chemistryScore", 0)),
+                "biology_score": int(data.get("biologyScore", 0)),
+                "english_score": int(data.get("englishScore", 0)),
+                "geography_score": int(data.get("geographyScore", 0)),
+            }
+
+            # IMPORTANT: call with clean_data not raw data
+            result = predict_basic(clean_data)
+
+        # ================== ADVANCED MODEL (>18) ===================
+        else:
+            skills = data.get("skills", "")
+            interests = data.get("interests", "")
+            top_k = 5
+            result = recommend(skills, interests, top_k)
+
+        # Save profile & recommendations
+        user["profile"] = data
+        user["recommendations"] = result
+        save_users(users)
+
+        return jsonify({
+            "message": "Profile and recommendations saved successfully",
+            "result": result
+        }), 200
+
+    except Exception as e:
+        print("❌ Error in /save-profile:", e)
+        return jsonify({"error": str(e)}), 500
+
+
+# ---------------- DASHBOARD ROUTE ----------------
+@app.route("/dashboard", methods=["GET"])
+def dashboard():
+    email = request.args.get("email")
+    users = load_users()
+
+    user = next((u for u in users if u["email"].lower() == email.lower()), None)
+    if not user:
+        return jsonify({"error": "User not found"}), 404
+
+    return jsonify({
+        "fullname": user["fullname"],
+        "profile": user.get("profile", {}),
+        "recommendations": user.get("recommendations", [])
+    })
+
+
+@app.route("/get-user", methods=["POST"])
+def get_user():
+    try:
+        data = request.get_json(force=True)
+        email = data.get("email")
+
+        users = load_users()
+        user = next((u for u in users if u["email"].lower() == email.lower()), None)
+
+        if not user:
+            return jsonify({"error": "User not found"}), 404
+
+        return jsonify({"profile": user.get("profile"), "recommendations": user.get("recommendations")}), 200
+
+    except Exception as e:
+        print("❌ Error in /get-user:", e)
+        return jsonify({"error": str(e)}), 500
+
 
 
 if __name__ == "__main__":
