@@ -5,11 +5,17 @@ from basic_recommender import predict_basic
 import json
 import os
 import hashlib
+from pathlib import Path
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)  # enable CORS so React frontend can call Flask backend
+cors_origins = os.environ.get("CORS_ORIGINS", "*")
+if cors_origins != "*":
+    cors_origins = [origin.strip() for origin in cors_origins.split(",") if origin.strip()]
 
-USERS_FILE = "users.json"
+CORS(app, resources={r"/*": {"origins": cors_origins}}, supports_credentials=True)
+
+BASE_DIR = Path(__file__).resolve().parent
+USERS_FILE = BASE_DIR / "users.json"
 
 # ---------------- UTILITY FUNCTIONS ----------------
 def load_users():
@@ -254,4 +260,6 @@ def get_user():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    debug = os.environ.get("FLASK_DEBUG", "0") == "1"
+    app.run(host="0.0.0.0", port=port, debug=debug)

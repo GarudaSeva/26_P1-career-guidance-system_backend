@@ -1,19 +1,20 @@
 import pandas as pd
 import joblib
 import json
-import os
+from pathlib import Path
 
 # Paths
-MODEL_PATH = "bramha/career_recommendation_xgb_model.pkl"
-ENCODER_PATH = "bramha/label_encoders.pkl"
-CAREER_JSON_PATH = "bramha/career_recommendations.json"  # <-- path to your JSON file
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "bramha" / "career_recommendation_xgb_model.pkl"
+ENCODER_PATH = BASE_DIR / "bramha" / "label_encoders.pkl"
+CAREER_JSON_PATH = BASE_DIR / "bramha" / "career_recommendations.json"
 
 # Load model and encoders
 xgb_model = joblib.load(MODEL_PATH)
 label_encoders = joblib.load(ENCODER_PATH)
 
 # Load career data JSON
-if os.path.exists(CAREER_JSON_PATH):
+if CAREER_JSON_PATH.exists():
     with open(CAREER_JSON_PATH, "r") as f:
         career_data = json.load(f)
 else:

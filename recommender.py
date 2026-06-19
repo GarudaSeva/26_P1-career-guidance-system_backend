@@ -2,21 +2,38 @@ import pandas as pd
 import numpy as np
 from sentence_transformers import SentenceTransformer, util
 from collections import Counter
-import spacy
+from pathlib import Path
 
-# Load SpaCy NLP model
-nlp = spacy.load("en_core_web_sm")
+try:
+    import spacy
+except ImportError:
+    spacy = None
+
+BASE_DIR = Path(__file__).resolve().parent
+
+
+def load_nlp():
+    if spacy is None:
+        return None
+    try:
+        return spacy.load("en_core_web_sm")
+    except OSError:
+        return spacy.blank("en")
+
+
+nlp = load_nlp()
 
 # Paths
-CSV_PATH = "data/career_data_processed.csv"
-EMB_PATH = "data/career_embeddings.npy"
+CSV_PATH = BASE_DIR / "data" / "career_data_processed.csv"
+EMB_PATH = BASE_DIR / "data" / "career_embeddings.npy"
+MODEL_PATH = BASE_DIR / "model_files"
 
 # Load data and embeddings
 df = pd.read_csv(CSV_PATH)
 embeddings = np.load(EMB_PATH)
 
 # Load model
-model = SentenceTransformer("all-MiniLM-L6-v2")
+model = SentenceTransformer(str(MODEL_PATH))
 
 # ==========================================
 # AUTO BUILD MULTI-WORD SKILL DICTIONARY
@@ -52,13 +69,14 @@ def parse_user_skills(text):
     text = text.lower()
     detected = []
 
-    # SpaCy noun chunk detection
-    doc = nlp(text)
-    for chunk in doc.noun_chunks:
-        phrase = chunk.text.strip().lower()
-        if phrase in MASTER_PHRASES:
-            detected.append(phrase)
-            text = text.replace(phrase, "")
+    # SpaCy noun chunk detection, when the parser model is available.
+    if nlp is not None and "parser" in nlp.pipe_names:
+        doc = nlp(text)
+        for chunk in doc.noun_chunks:
+            phrase = chunk.text.strip().lower()
+            if phrase in MASTER_PHRASES:
+                detected.append(phrase)
+                text = text.replace(phrase, "")
 
     # Check dictionary multi-words manually
     for phrase in MASTER_PHRASES:

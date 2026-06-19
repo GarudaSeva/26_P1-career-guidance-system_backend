@@ -355,5 +355,105 @@
                 "similarity": 0.39086779952049255
             }
         ]
+    },
+    {
+        "fullname": "ganesh",
+        "email": "bora@gmail.com",
+        "password": "bbb44000ab696739455eae520f761fd2b55b3b98f0f2165f435c166bda6ca2d6",
+        "profile": {
+            "email": "bora@gmail.com",
+            "gender": "male",
+            "age": "21",
+            "partTimeJob": "",
+            "absenceDays": "",
+            "extracurricularActivities": "",
+            "weeklyStudyHours": "",
+            "mathScore": "",
+            "historyScore": "",
+            "physicsScore": "",
+            "chemistryScore": "",
+            "biologyScore": "",
+            "englishScore": "",
+            "geographyScore": "",
+            "skills": "python , ml",
+            "interests": "ai , web"
+        },
+        "recommendations": [
+            {
+                "career_opportunity": "machine learning engineer",
+                "pay_scale": "High paying",
+                "description": "design and implement ml algorithms for production systems...",
+                "matched_skills": [
+                    "python"
+                ],
+                "skill_gap": [
+                    "cloud platforms",
+                    "tensorflow",
+                    "statistics",
+                    "data",
+                    "engineering"
+                ],
+                "similarity": 0.5805858373641968
+            },
+            {
+                "career_opportunity": "ai model validator",
+                "pay_scale": "High paying",
+                "description": "test and verify machine learning models for accuracy...",
+                "matched_skills": [
+                    "python"
+                ],
+                "skill_gap": [
+                    "data analysis",
+                    "machine learning",
+                    "testing",
+                    "documentation"
+                ],
+                "similarity": 0.5349762439727783
+            },
+            {
+                "career_opportunity": "ai research scientist",
+                "pay_scale": "High paying",
+                "description": "conduct advanced research in artificial intelligence and machine learning...",
+                "matched_skills": [
+                    "python"
+                ],
+                "skill_gap": [
+                    "statistical analysis",
+                    "deep",
+                    "learning",
+                    "research",
+                    "methodology"
+                ],
+                "similarity": 0.5075745582580566
+            },
+            {
+                "career_opportunity": "artificial intelligence trainer",
+                "pay_scale": "High paying",
+                "description": "develop and train machine learning models...",
+                "matched_skills": [],
+                "skill_gap": [
+                    "programming data",
+                    "problem solving",
+                    "machine learning",
+                    "science",
+                    "algorithm"
+                ],
+                "similarity": 0.4975784718990326
+            },
+            {
+                "career_opportunity": "ai prompt engineer",
+                "pay_scale": "High paying",
+                "description": "design and optimize prompts for ai language models...",
+                "matched_skills": [],
+                "skill_gap": [
+                    "data analysis",
+                    "prompt",
+                    "engineering",
+                    "nlp",
+                    "creativity"
+                ],
+                "similarity": 0.41539257764816284
+            }
+        ]
     }
 ]
