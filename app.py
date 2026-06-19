@@ -8,11 +8,18 @@ import hashlib
 from pathlib import Path
 
 app = Flask(__name__)
-cors_origins = os.environ.get("CORS_ORIGINS", "*")
-if cors_origins != "*":
-    cors_origins = [origin.strip() for origin in cors_origins.split(",") if origin.strip()]
 
-CORS(app, resources={r"/*": {"origins": cors_origins}}, supports_credentials=True)
+def parse_csv_env(name, default):
+    value = os.environ.get(name, default)
+    if value == "*":
+        return value
+    return [item.strip() for item in value.split(",") if item.strip()]
+
+
+CORS_ORIGINS = parse_csv_env("CORS_ORIGINS", "*")
+CORS_SUPPORTS_CREDENTIALS = os.environ.get("CORS_SUPPORTS_CREDENTIALS", "true").lower() == "true"
+
+CORS(app, resources={r"/*": {"origins": CORS_ORIGINS}}, supports_credentials=CORS_SUPPORTS_CREDENTIALS)
 
 BASE_DIR = Path(__file__).resolve().parent
 USERS_FILE = BASE_DIR / "users.json"

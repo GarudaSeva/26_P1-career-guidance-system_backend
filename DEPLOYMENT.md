@@ -15,11 +15,14 @@ For Heroku/Railway-style platforms, the included `Procfile` defines the web proc
 ## Environment Variables
 
 - `PORT`: set automatically by most deployment platforms.
-- `CORS_ORIGINS`: optional comma-separated frontend URLs. Example:
+- `FLASK_DEBUG`: keep this as `0` in deployment.
+- `CORS_ORIGINS`: comma-separated frontend URLs. Use your deployed frontend URL in production. Example:
 
 ```bash
 CORS_ORIGINS=https://your-frontend-domain.com
 ```
+
+- `CORS_SUPPORTS_CREDENTIALS`: set to `true` if the browser should allow credentialed requests.
 
 If `CORS_ORIGINS` is not set, the backend allows all origins.
 
@@ -51,4 +54,4 @@ curl http://localhost:5000/health
 ## Important Notes
 
 - `users.json` is file-based storage. On many free hosting platforms, saved users may reset after redeploy/restart. For real production use, move user/profile data to a database.
-- After backend deployment, update the frontend API base URL from `http://localhost:5000` to your deployed backend URL.
+- After backend deployment, set the frontend `VITE_API_BASE_URL` environment variable to your deployed backend URL.
