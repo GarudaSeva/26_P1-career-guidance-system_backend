@@ -1,10 +1,25 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from recommender import recommend
-from basic_recommender import predict_basic
 import os
 import hashlib
 from pymongo import MongoClient
+
+_recommend_fn = None
+_predict_basic_fn = None
+
+def get_recommend():
+    global _recommend_fn
+    if _recommend_fn is None:
+        from recommender import recommend
+        _recommend_fn = recommend
+    return _recommend_fn
+
+def get_predict_basic():
+    global _predict_basic_fn
+    if _predict_basic_fn is None:
+        from basic_recommender import predict_basic
+        _predict_basic_fn = predict_basic
+    return _predict_basic_fn
 
 try:
     from dotenv import load_dotenv
@@ -101,7 +116,7 @@ def basic_endpoint():
         data = request.get_json(force=True)
         print("Received /basic data:", data)
 
-        result = predict_basic(data)
+        result = get_predict_basic()(data)
         print("Sending response:", result)
         return jsonify(result)
     except Exception as e:
@@ -123,7 +138,7 @@ def recommend_endpoint():
         if not skills and not interests:
             return jsonify({"error": "Please provide at least 'skills' or 'interests'"}), 400
 
-        recommendations = recommend(skills, interests, top_k)
+        recommendations = get_recommend()(skills, interests, top_k)
         print("Sending recommendations:", recommendations)
         return jsonify({"recommendations": recommendations})
     except Exception as e:
@@ -168,12 +183,12 @@ def save_profile():
                 "geography_score": int(data.get("geographyScore", 0)),
             }
 
-            result = predict_basic(clean_data)
+            result = get_predict_basic()(clean_data)
         else:
             skills = data.get("skills", "")
             interests = data.get("interests", "")
             top_k = 5
-            result = recommend(skills, interests, top_k)
+            result = get_recommend()(skills, interests, top_k)
 
         users_col.update_one(
             {"email": email.lower()},
